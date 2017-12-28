@@ -21,8 +21,12 @@
             flex: 1 1 auto
         }
 
-        canvas {
+        .player.local canvas {
             border: solid 0.2em #fff;
+        }
+
+        canvas {
+            border: solid 0.2em #707070;
             height: 90vh;
             image-rendering: pixelated;
         }
@@ -30,20 +34,20 @@
 </head>
 
 <body>
-    <div class="player">
-        <div class="score"></div>
-        <canvas class="tetris" width="240" height="400"></canvas>
-    </div>
+    <template id="player-template">
+        <div class="player">
+            <div class="score"></div>
+            <canvas class="tetris" width="240" height="400"></canvas>
+        </div>
+    </template>
 
-    <div class="player">
-        <div class="score"></div>
-        <canvas class="tetris" width="240" height="400"></canvas>
-    </div>
-
-    <script type="" src="Player.js"></script>
-    <script type="" src="Arena.js"></script>
-    <script type="" src="Tetris.js"></script>
-    <script type="" src="main.js"></script>
+    <script type="" src="./client/TetrisManager.js"></script>
+    <script type="" src="./client/ConnectionManager.js"></script>
+    <script type="" src="./client/Events.js"></script>
+    <script type="" src="./client/Player.js"></script>
+    <script type="" src="./client/Arena.js"></script>
+    <script type="" src="./client/Tetris.js"></script>
+    <script type="" src="./client/main.js"></script>
 </body>
 
 </html>

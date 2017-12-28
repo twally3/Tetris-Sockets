@@ -1,4 +1,6 @@
-class TetrisManager {
+import Tetris from './Tetris.js'
+
+export default class TetrisManager {
     constructor(document) {
         this.document = document
         this.template = document.getElementById('player-template')

@@ -1,4 +1,6 @@
-class Arena {
+import Events from './Events.js'
+
+export default class Arena {
     constructor(w, h) {
         const matrix = []
     

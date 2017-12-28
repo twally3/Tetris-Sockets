@@ -1,3 +1,6 @@
+import ConnectionManager from './ConnectionManager.js'
+import TetrisManager from './TetrisManager.js'
+
 const tetrisManager = new TetrisManager(document)
 const localTetris = tetrisManager.createPlayer()
 localTetris.element.classList.add('local')

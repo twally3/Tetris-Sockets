@@ -1,4 +1,7 @@
-class Tetris {
+import Arena from './Arena.js'
+import Player from './Player.js'
+
+export default class Tetris {
     constructor(element) {
         this.element = element
         this.canvas = element.querySelector('canvas')

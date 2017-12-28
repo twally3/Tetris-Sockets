@@ -1,4 +1,4 @@
-class ConnectionManager {
+export default class ConnectionManager {
     constructor(tetrisManager) {
         this.conn = null
         this.peers = new Map()

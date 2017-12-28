@@ -1,4 +1,6 @@
-class Player {
+import Events from './Events.js'
+
+export default class Player {
     constructor(tetris) {
         this.DROP_SLOW = 1000
         this.DROP_FAST = 50

@@ -17,7 +17,7 @@ export default class ConnectionManager {
         })
 
         this.conn.addEventListener('message', event => {
-            console.log('Recieved Message', event.data)
+            // console.log('Recieved Message', event.data)
             this.receive(event.data)
         })
     }
@@ -119,7 +119,7 @@ export default class ConnectionManager {
 
     send(data) {
         const msg = JSON.stringify(data)
-        console.log(`Sending message ${msg}`)
+        // console.log(`Sending message ${msg}`)
         this.conn.send(msg)
     }
 }

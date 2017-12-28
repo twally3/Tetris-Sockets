@@ -24,7 +24,7 @@ class Client {
 
     send(data) {
         const msg = JSON.stringify(data)
-        console.log(`Sending message ${msg}`)
+        // console.log(`Sending message ${msg}`)
         this.conn.send(msg, function ack(err) {
             if (err) {
                 console.error(`Message Failed ${msg}`)

@@ -41,12 +41,10 @@ function broadcastSession(session) {
             type: 'session-broadcast',
             peers: {
                 you: client.id,
-                clients: clients.map(client => {
-                    return {
-                        id: client.id,
-                        state: client.state
-                    }
-                })
+                clients: clients.map(client => ({
+                    id: client.id,
+                    state: client.state
+                }))
             }
         })
     })
@@ -57,7 +55,7 @@ server.on('connection', conn => {
     const client = createClient(conn)
 
     conn.on('message', msg => {
-        console.log(`Message Recieved`, msg)
+        // console.log(`Message Recieved`, msg)
         const data = JSON.parse(msg)
 
         if (data.type === 'create-session') {

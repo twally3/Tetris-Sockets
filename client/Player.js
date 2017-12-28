@@ -1,14 +1,13 @@
 import Events from './Events.js'
 
 export default class Player {
-    constructor(tetris) {
+    constructor(arena) {
         this.DROP_SLOW = 1000
         this.DROP_FAST = 50
 
         this.events = new Events()
 
-        this.tetris = tetris
-        this.arena = tetris.arena
+        this.arena = arena
 
         this.pos = { x: 0, y: 0},
         this.matrix = null,

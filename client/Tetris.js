@@ -9,7 +9,7 @@ export default class Tetris {
         this.context.scale(20, 20)
 
         this.arena = new Arena(12, 20)
-        this.player = new Player(this)
+        this.player = new Player(this.arena)
 
         this.player.events.listen('score', score => {
             this.updateScore(score)

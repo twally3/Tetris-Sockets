@@ -7,7 +7,7 @@ localTetris.element.classList.add('local')
 localTetris.run()
 
 const connectionManager = new ConnectionManager(tetrisManager)
-connectionManager.connect('ws://localhost:8080')
+connectionManager.connect('ws://mt-tetris.herokuapp.com')
 
 const keyListener = event => {
     const player = localTetris.player

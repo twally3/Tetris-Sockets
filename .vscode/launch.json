@@ -14,7 +14,7 @@
             "name": "Launch localhost with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:5000",
+            "url": "http://localhost:8080",
             "sourceMaps": true,
             "webRoot": "${workspaceRoot}",
             "userDataDir": false

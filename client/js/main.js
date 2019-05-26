@@ -9,6 +9,8 @@ localTetris.run()
 const connectionManager = new ConnectionManager(tetrisManager)
 connectionManager.connect(window.location.origin.replace(/^http/, 'ws'))
 
+const audioManager = document.getElementById('music')
+
 const keyListener = event => {
     const player = localTetris.player
 
@@ -21,7 +23,10 @@ const keyListener = event => {
             player.rotate(-1)
         } else if (event.code === 'KeyQ') {
             player.rotate(1)
-        }
+        } else if (event.code === 'KeyM') {
+					if (audioManager.paused) audioManager.play();
+					else audioManager.pause();
+				}
     }
     
     if (event.code === 'KeyS') {
@@ -33,7 +38,7 @@ const keyListener = event => {
         } else {
             player.dropInterval = player.DROP_SLOW
         }
-    }
+		}	
 }
 
 

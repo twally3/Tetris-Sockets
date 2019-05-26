@@ -1,0 +1,24 @@
+{
+	"plugins": ["prettier"],
+	"env": {
+		"node": true,
+		"es6": true,
+		"browser": true
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"no-unused-vars": [
+			2,
+			{
+				"args": "after-used",
+				"argsIgnorePattern": "^_"
+			}
+		],
+		"prettier/prettier": "error"
+	},
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2018
+	},
+	"globals": {}
+}

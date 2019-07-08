@@ -43,6 +43,7 @@ function getSession(id) {
 }
 
 function broadcastSession(session) {
+    if (!session) return;
     const clients = [...session.clients]
     clients.forEach(client => {
         client.send({

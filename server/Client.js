@@ -1,36 +1,36 @@
 class Client {
-    constructor(conn, id) {
-        this.conn = conn
-        this.id = id
-        this.session = null
-        this.state = null
-    }
+	constructor(conn, id) {
+		this.conn = conn;
+		this.id = id;
+		this.session = null;
+		this.state = null;
+	}
 
-    broadcast(data) {
-        if (!this.session) {
-            throw new Error('Cannot broadcast without session')
-        }
+	broadcast(data) {
+		if (!this.session) {
+			throw new Error('Cannot broadcast without session');
+		}
 
-        data.clientId = this.id
+		data.clientId = this.id;
 
-        this.session.clients.forEach(client => {
-            if (this === client) {
-                return
-            }
+		this.session.clients.forEach(client => {
+			if (this === client) {
+				return;
+			}
 
-            client.send(data)
-        })
-    }
+			client.send(data);
+		});
+	}
 
-    send(data) {
-        const msg = JSON.stringify(data)
-        // console.log(`Sending message ${msg}`)
-        this.conn.send(msg, function ack(err) {
-            if (err) {
-                console.error(`Message Failed ${msg}`)
-            }
-        })
-    }
+	send(data) {
+		const msg = JSON.stringify(data);
+		// console.log(`Sending message ${msg}`)
+		this.conn.send(msg, function ack(err) {
+			if (err) {
+				console.error(`Message Failed ${msg}`);
+			}
+		});
+	}
 }
 
-module.exports = Client
+module.exports = Client;
